@@ -156,9 +156,4 @@
       margin-top: 0.25rem;
     }
   }
-  .close-on-scroll {
-    ::ng-deep nggv-dropdown-list ul[role='listbox'] {
-      overscroll-behavior: none;
-    }
-  }
 }

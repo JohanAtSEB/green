@@ -615,7 +615,7 @@ const ComboTemplate: StoryFn<StoryArgs> = (args: any) => {
   }
 }
 
-const WithCloseOnScrollTemplate: StoryFn<StoryArgs> = (args: any) => {
+const CloseOnScrollTemplate: StoryFn<StoryArgs> = (args: any) => {
   const formControl = new UntypedFormControl({ value: '' })
   return {
     template: /*html*/ `
@@ -662,6 +662,10 @@ export const Disabled = DisabledTemplate.bind({}) as any
 Disabled.args = {
   ...defaultArgs,
   disabled: true,
+}
+export const CloseOnScroll = CloseOnScrollTemplate.bind({}) as any
+CloseOnScroll.args = {
+  ...defaultArgs,
 }
 export const WithError = Template.bind({}) as any
 WithError.args = {
@@ -711,12 +715,6 @@ WithDisplayDisabledAsLocked.args = {
   locked: false,
   description: undefined,
   displayDisabledAsLocked: true,
-}
-
-export const WithCloseOnScroll = WithCloseOnScrollTemplate.bind({}) as any
-WithCloseOnScroll.args = {
-  ...defaultArgs,
-  closeOnScroll: true,
 }
 
 const TypeaheadTemplate: StoryFn<StoryArgs> = (args: any) => {

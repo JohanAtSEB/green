@@ -151,14 +151,6 @@ export class NggvDropdownComponent<
   @Input() onlyHandleDistinctChanges = true
 
   /**
-   * Used to determine if opened list should close when scrolling outside of dropdown-list
-   * If set to false, the dropdown will not close
-   * If set to true, the dropdown will close if scrolling outside of the list.
-   * Defaults to false.
-   */
-  @Input() closeOnScroll? = false
-
-  /**
    * Emits changes of the expanded state of the dropdown
    */
   @Output() expandedChange = new EventEmitter<boolean>()
@@ -301,7 +293,7 @@ export class NggvDropdownComponent<
     this.expandedChange.emit(this.expanded)
     if (this.expanded) {
       this.subscribeToOutsideClickEvent()
-      if (this.closeOnScroll) this.subscribeToOutsideScrollEvent()
+      this.subscribeToOutsideScrollEvent()
     }
     if (!this.expanded) this.onTouched()
   }
