@@ -121,7 +121,7 @@ export class DatepickerComponent implements OnInit, OnChanges, OnDestroy {
         : new Date()
     this.activeCalendar = new CalendarMonth(initDate)
 
-    this.setDropdownPosition()
+    if (this.dynamicPosition) this.setDropdownPosition()
   }
 
   ngOnDestroy() {
